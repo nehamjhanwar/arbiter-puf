@@ -7,6 +7,7 @@
 
 
 In cryptography and within embedded security ICs, the PUF is used to create keys that are generated on-demand and instantaneously erased once used. PUF is dependent on random physical factors (unpredictable and uncontrollable) that exist natively and/or are incidentally introduced during a manufacturing process.
+
 Introduction:Arbiter PUFs. utilize the intrinsic timing differences of two symmetrically designed paths to a. single bit of the response at the output of the circuit 
 
 ![image](https://user-images.githubusercontent.com/101010093/208838060-4411eeca-1ad9-4192-83a0-63891747bd52.png)
