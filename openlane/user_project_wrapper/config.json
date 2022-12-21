@@ -2,13 +2,13 @@
     "DESIGN_NAME": "user_project_wrapper",
     "VERILOG_FILES": ["dir::../../verilog/rtl/defines.v", "dir::../../verilog/rtl/user_project_wrapper.v"],
     "CLOCK_PERIOD": 10,
-    "CLOCK_PORT": "user_clock2",
-    "CLOCK_NET": "mprj.clk",
-    "FP_PDN_MACRO_HOOKS": "mprj vccd1 vssd1 vccd1 vssd1",
+    "CLOCK_PORT": "",
+    "CLOCK_NET": "puf1.ipulse",
+    "FP_PDN_MACRO_HOOKS": "puf1 vccd1 vssd1 vccd1 vssd1",
     "MACRO_PLACEMENT_CFG": "dir::macro.cfg",
-    "VERILOG_FILES_BLACKBOX": ["dir::../../verilog/rtl/defines.v", "dir::../../verilog/rtl/user_proj_example.v"],
-    "EXTRA_LEFS": "dir::../../lef/user_proj_example.lef",
-    "EXTRA_GDS_FILES": "dir::../../gds/user_proj_example.gds",
+    "VERILOG_FILES_BLACKBOX": ["dir::../../verilog/rtl/defines.v", "dir::../../verilog/rtl/arbiterpuf.v"],
+    "EXTRA_LEFS": "dir::../../lef/arbiterpuf.lef",
+    "EXTRA_GDS_FILES": "dir::../../gds/arbiterpuf.gds",
     "FP_PDN_CHECK_NODES": 0,
     "SYNTH_ELABORATE_ONLY": 1,
     "PL_RANDOM_GLB_PLACEMENT": 1,
@@ -81,5 +81,6 @@
         "FP_PDN_CHECK_NODES": 0,
         "MAGIC_WRITE_FULL_LEF": 0,
         "FP_PDN_ENABLE_RAILS": 0
+        
    }
 }
