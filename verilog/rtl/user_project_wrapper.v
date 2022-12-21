@@ -77,18 +77,39 @@ module user_project_wrapper #(
     // User maskable interrupt signals
     output [2:0] user_irq
 );
+    wire ipulse;
+    wire [15:0]ichallenge;
+    wire oresponse;
+    
+    assign io_in[22]=ipulse;
+   // assign io_in[`MPRJ_IO_PADS-1:23]=ichallenge;
+    assign io_in[37:23]=ichallenge;
 
+   // assign io_oeb[`MPRJ_IO_PADS-1:22]=17'b1111_1111_1111_11111;
+    
+    assign io_out[20]=oresponse;
+    //assign io_oeb[20]=1'b0;
 /*--------------------------------------*/
 /* User project is instantiated  here   */
 /*--------------------------------------*/
+arbiterpuf puf1(
+`ifdef USE_POWER_PINS
+	.vccd1(vccd1),	// User area 1 1.8V power
+	.vssd1(vssd1),	// User area 1 digital ground
+`endif
+  .ipulse(ipulse),
+  .ichallenge(ichallenge),
+  .oresponse(oresponse)
+  );
 
+/*
 user_proj_example mprj (
 `ifdef USE_POWER_PINS
 	.vccd1(vccd1),	// User area 1 1.8V power
 	.vssd1(vssd1),	// User area 1 digital ground
 `endif
 
-    .wb_clk_i(wb_clk_i),
+  /*  .wb_clk_i(wb_clk_i),
     .wb_rst_i(wb_rst_i),
 
     // MGMT SoC Wishbone Slave
@@ -107,16 +128,16 @@ user_proj_example mprj (
     .la_data_in(la_data_in),
     .la_data_out(la_data_out),
     .la_oenb (la_oenb),
-
+*/
     // IO Pads
 
-    .io_in (io_in),
-    .io_out(io_out),
-    .io_oeb(io_oeb),
-
+   // .io_in (io_in),
+   // .io_out(io_out),
+    //.io_oeb(io_oeb),
+//
     // IRQ
-    .irq(user_irq)
-);
+    //.irq(user_irq)
+//);
 
 endmodule	// user_project_wrapper
 

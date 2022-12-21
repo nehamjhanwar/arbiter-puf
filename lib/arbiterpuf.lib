@@ -1,0 +1,124 @@
+library (arbiterpuf) {
+  comment                        : "";
+  delay_model                    : table_lookup;
+  simulation                     : false;
+  capacitive_load_unit (1,pF);
+  leakage_power_unit             : 1pW;
+  current_unit                   : "1A";
+  pulling_resistance_unit        : "1kohm";
+  time_unit                      : "1ns";
+  voltage_unit                   : "1v";
+  library_features(report_delay_calculation);
+
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  slew_derate_from_library : 1.0;
+
+
+  nom_process                    : 1.0;
+  nom_temperature                : 25.0;
+  nom_voltage                    : 1.80;
+
+  type ("ichallenge") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 16;
+    bit_from : 15;
+    bit_to : 0;
+  }
+
+  cell ("arbiterpuf") {
+    pin("ipulse") {
+      direction : input;
+      capacitance : 0.0043;
+    }
+    pin("oresponse") {
+      direction : output;
+      capacitance : 0.0334;
+    }
+    pin("vccd1") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("vssd1") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    bus("ichallenge") {
+      bus_type : ichallenge;
+      direction : input;
+      capacitance : 0.0000;
+    pin("ichallenge[15]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[14]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[13]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[12]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[11]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[10]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[9]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[8]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[7]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[6]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[5]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[4]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[3]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[2]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[1]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    pin("ichallenge[0]") {
+      direction : input;
+      capacitance : 0.0000;
+    }
+    }
+  }
+
+}
