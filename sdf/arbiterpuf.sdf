@@ -1,0 +1,63 @@
+(DELAYFILE
+ (SDFVERSION "3.0")
+ (DESIGN "arbiterpuf")
+ (DATE "Thu Dec 22 05:25:46 2022")
+ (VENDOR "Parallax")
+ (PROGRAM "STA")
+ (VERSION "2.3.2")
+ (DIVIDER .)
+ (VOLTAGE 1.800::1.800)
+ (PROCESS "1.000::1.000")
+ (TEMPERATURE 25.000::25.000)
+ (TIMESCALE 1ns)
+ (CELL
+  (CELLTYPE "arbiterpuf")
+  (INSTANCE)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ipulse input1.A (0.016:0.016:0.016) (0.007:0.007:0.007))
+    (INTERCONNECT ipulse ANTENNA_input1_A.DIODE (0.016:0.016:0.016) (0.007:0.007:0.007))
+    (INTERCONNECT _0_.Q output2.A (0.003:0.003:0.003) (0.003:0.003:0.003))
+    (INTERCONNECT _0_.Q ANTENNA_output2_A.DIODE (0.003:0.003:0.003) (0.003:0.003:0.003))
+    (INTERCONNECT input1.X _0_.CLK (0.004:0.004:0.004) (0.004:0.004:0.004))
+    (INTERCONNECT input1.X _0_.D (0.004:0.004:0.004) (0.004:0.004:0.004))
+    (INTERCONNECT input1.X ANTENNA__0__D.DIODE (0.004:0.004:0.004) (0.004:0.004:0.004))
+    (INTERCONNECT input1.X ANTENNA__0__CLK.DIODE (0.004:0.004:0.004) (0.004:0.004:0.004))
+    (INTERCONNECT output2.X oresponse (0.001:0.001:0.001) (0.001:0.001:0.001))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sky130_fd_sc_hd__dfxtp_1")
+  (INSTANCE _0_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH CLK Q (0.492:0.492:0.492) (0.419:0.419:0.419))
+   )
+  )
+  (TIMINGCHECK
+    (HOLD (posedge D) (posedge CLK) (-0.042:-0.042:-0.042))
+    (HOLD (negedge D) (posedge CLK) (-0.057:-0.057:-0.057))
+    (SETUP (posedge D) (posedge CLK) (0.065:0.065:0.065))
+    (SETUP (negedge D) (posedge CLK) (0.115:0.115:0.115))
+  )
+ )
+ (CELL
+  (CELLTYPE "sky130_fd_sc_hd__clkbuf_2")
+  (INSTANCE input1)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.196:0.196:0.196) (0.170:0.170:0.170))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sky130_fd_sc_hd__buf_2")
+  (INSTANCE output2)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.259:0.259:0.259) (0.214:0.214:0.214))
+   )
+  )
+ )
+)
