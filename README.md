@@ -5,8 +5,17 @@
 | :exclamation: Important Note            |
 |-----------------------------------------|
 
-## Please fill in your project documentation in this README.md file 
+Arbiter-based Physically Unclonable Function (PUF) is one kind of the delay-based PUFs that use the time difference of two delay-line signals.
 
-Refer to [README](docs/source/index.rst#section-quickstart) for a quickstart of how to use caravel_user_project
+The arbiter PUF, shown in Figure comprises two identically laid out paths. To measure a response bit from the arbiter, a rising edge is input simultaneously to the two paths. This input signal races through the circuit, and a latch at the output detects which path propagated the input signal faster.
 
-Refer to [README](docs/source/index.rst) for this sample project documentation. 
+
+This project have taught me  a lot about pdks, Openlane flow , RTL2GDS flow and many more.
+
+Looking forward for more such collaborations and projects. 
+
+connect us on linkedIn : https://www.linkedin.com/in/neha-maheshwari-97b82bb2/
+
+Further details of NSDCS lab can be found here. 
+
+https://sites.google.com/site/svishvakarma/home?authuser=0 
